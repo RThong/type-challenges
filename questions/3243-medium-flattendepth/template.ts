@@ -7,6 +7,7 @@ type FlattenOnce<T extends unknown[], U extends unknown[] = []> = T extends [
     : FlattenOnce<R, [...U, L]>
   : U
 
+// T[number]可以获得数组值的联合类型
 type TupleHasArr<T extends unknown[]> = Extract<
   T[number],
   unknown[]
@@ -17,6 +18,7 @@ type TupleHasArr<T extends unknown[]> = Extract<
 type FlattenDepth<
   T extends unknown[],
   U extends number = 1,
+  // 通过数组来记录次数
   K extends unknown[] = ["temp"]
 > = K["length"] extends U
   ? FlattenOnce<T>
