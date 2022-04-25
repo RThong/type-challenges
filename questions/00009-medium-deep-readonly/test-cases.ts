@@ -1,8 +1,6 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from "@type-challenges/utils"
 
-type cases = [
-  Expect<Equal<DeepReadonly<X>, Expected>>,
-]
+type cases = [Expect<Equal<DeepReadonly<X>, Expected>>]
 
 type X = {
   a: () => 22
@@ -13,19 +11,21 @@ type X = {
       g: {
         h: {
           i: true
-          j: 'string'
+          j: "string"
         }
-        k: 'hello'
+        k: "hello"
       }
       l: [
-        'hi',
+        "hi",
         {
-          m: ['hey']
-        },
+          m: ["hey"]
+        }
       ]
     }
   }
 }
+
+let a: DeepReadonly<X>
 
 type Expected = {
   readonly a: () => 22
@@ -36,15 +36,15 @@ type Expected = {
       readonly g: {
         readonly h: {
           readonly i: true
-          readonly j: 'string'
+          readonly j: "string"
         }
-        readonly k: 'hello'
+        readonly k: "hello"
       }
       readonly l: readonly [
-        'hi',
+        "hi",
         {
-          readonly m: readonly ['hey']
-        },
+          readonly m: readonly ["hey"]
+        }
       ]
     }
   }
