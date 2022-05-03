@@ -18,8 +18,7 @@ interface Bird {
 }
 
 type Animal = Cat | Dog | Bird
-
 type cases = [
-  Expect<Equal<LookUp<Animal, "dog">, Dog>>,
-  Expect<Equal<LookUp<Animal, "cat">, Cat>>
+  Expect<Equal<MyLookUp<Animal, "dog">, Dog>>,
+  Expect<Equal<MyLookUp<Animal, "cat">, Cat>>
 ]
