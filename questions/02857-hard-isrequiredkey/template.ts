@@ -1,1 +1,5 @@
-type IsRequiredKey<T, K extends keyof T> = any
+type IsRequiredKey<T extends Record<string, any>, U> = (
+  U extends keyof GetOptional<T> ? false : true
+) extends true
+  ? true
+  : false

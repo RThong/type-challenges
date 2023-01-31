@@ -1,4 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from "@type-challenges/utils"
+import { IndexOf } from "./template"
 
 type cases = [
   Expect<Equal<IndexOf<[1, 2, 3], 2>, 1>>,

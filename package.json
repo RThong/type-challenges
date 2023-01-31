@@ -36,7 +36,6 @@
     "utility-types": "^3.10.0"
   },
   "eslintConfig": {
-    "extends": "@antfu/eslint-config-ts",
     "rules": {
       "import/first": "off",
       "no-unused-vars": "off",
