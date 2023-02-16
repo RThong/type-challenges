@@ -10,8 +10,10 @@ VueBasicProps({
     propD: { type: ClassA },
     propE: { type: [String, Number] },
     propF: RegExp,
+    propG: String,
   },
   data(this) {
+    this.propB
     type PropsType = Debug<typeof this>
     type cases = [
       Expect<IsAny<PropsType['propA']>>,
@@ -20,6 +22,7 @@ VueBasicProps({
       Expect<Equal<PropsType['propD'], ClassA>>,
       Expect<Equal<PropsType['propE'], string | number>>,
       Expect<Equal<PropsType['propF'], RegExp>>,
+      Expect<Equal<PropsType['propG'], string>>,
     ]
 
     // @ts-expect-error

@@ -1,13 +1,13 @@
 declare function SimpleVue<T, U, K>(options: {
-  data: () => T
+  data: (this: never) => T
   computed: U & ThisType<T>
   methods: K &
-    ThisType<
+  ThisType<
       {
         [key in keyof U]: U[key] extends (...args: any[]) => unknown
           ? ReturnType<U[key]>
           : never
       } & T &
-        K
+      K
     >
 }): any
